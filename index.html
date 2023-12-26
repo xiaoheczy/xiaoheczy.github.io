@@ -1,0 +1,381 @@
+<!-- This web page is copied by  -->
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			document.onkeydown = function() {
+				if (window.event && window.event.keyCode == 123) {
+					alert("点错？？？下次一定！");
+					event.keyCode = 0;
+					event.returnValue = false;
+				}
+				if (window.event && window.event.keyCode == 13) {
+					window.event.keyCode = 505;
+				}
+				if (window.event && window.event.keyCode == 8) {
+					alert(str + "\n请使用Del键进行字符的删除操作！");
+					window.event.returnValue = false;
+				}
+			}
+		</script>
+		<script type="text/javascript">
+			//屏蔽右键菜单
+			document.oncontextmenu = function(event) {
+				if (window.event) {
+					event = window.event;
+				}
+				try {
+					var the = event.srcElement;
+					if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+						return false;
+					}
+					return true;
+				} catch (e) {
+					return false;
+				}
+			}
+			//屏蔽粘贴
+			document.onpaste = function(event) {
+				if (window.event) {
+					event = window.event;
+				}
+				try {
+					var the = event.srcElement;
+					if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+						return false;
+					}
+					return true;
+				} catch (e) {
+					return false;
+				}
+			}
+			//屏蔽复制
+			document.oncopy = function(event) {
+				if (window.event) {
+					event = window.event;
+				}
+				try {
+					var the = event.srcElement;
+					if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+						return false;
+					}
+					return true;
+				} catch (e) {
+					return false;
+				}
+			}
+			//屏蔽剪切
+			document.oncut = function(event) {
+				if (window.event) {
+					event = window.event;
+				}
+				try {
+					var the = event.srcElement;
+					if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+						return false;
+					}
+					return true;
+				} catch (e) {
+					return false;
+				}
+			}
+			//屏蔽选中
+			document.onselectstart = function(event) {
+				if (window.event) {
+					event = window.event;
+				}
+				try {
+					var the = event.srcElement;
+					if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+						return false;
+					}
+					return true;
+				} catch (e) {
+					return false;
+				}
+			}
+		</script>
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>赫兹云</title>
+		<link rel="stylesheet" href="css/buttons.css">
+		<link rel="stylesheet" href="css/app.css" type="text/css" media="all">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<style>
+			#main article {
+				border-bottom: none;
+			}
+
+			body {
+				font: 500 .875em PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+				background-color: #07040e;
+			}
+
+			#canvas {
+				position: absolute;
+				z-index: 10;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				cursor: none;
+			}
+
+			.content {
+				position: absolute;
+				z-index: 11;
+				right: 0;
+				left: 0;
+				top: 0;
+				bottom: 0;
+			}
+
+			.splash {
+				position: relative;
+			}
+
+			img#qq {
+				width: 128px;
+				background-size: cover;
+				border-radius: 200px;
+				box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
+				border: 3px solid #00a0ff;
+				opacity: 1;
+				margin: 0 auto;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				transition: all 1.0s;
+			}
+
+			#qq:hover {
+				box-shadow: 0 0 10px #fff;
+				-webkit-box-shadow: 0 0 19px #fff;
+				transform: rotate(360deg);
+				-ms-transform: rotate(360deg);
+				/* IE 9 */
+				-moz-transform: rotate(360deg);
+				/* Firefox */
+				-webkit-transform: rotate(360deg);
+				/* Safari 和 Chrome */
+				-o-transform: rotate(360deg);
+				/* Opera */
+				filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+			}
+
+			#menu-primary {
+				display: flex;
+				justify-content: space-around;
+			}
+
+			.text1 {
+				margin: 15px;
+				width: 152px;
+				padding: 0;
+			}
+
+			.home .jumbotron .icondiv {
+				text-align: center;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function click(e) {
+				if (document.all) {
+					if (event.button == 2 || event.button == 3) {
+						alert("欢迎光临！锦鲤");
+						oncontextmenu = 'return false';
+					}
+				}
+				if (document.layers) {
+					if (e.which == 3) {
+						oncontextmenu = 'return false';
+					}
+				}
+			}
+			if (document.layers) {
+				document.captureEvents(Event.MOUSEDOWN);
+			}
+			document.onmousedown = click;
+			document.oncontextmenu = new Function("return false;")
+			document.onkeydown = document.onkeyup = document.onkeypress = function() {
+				if (window.event.keyCode == 123) {
+					window.event.returnValue = false;
+					return (false);
+				}
+			}
+		</script>
+		<script charset="utf-8" id="LA_COLLECT" src="js/js-sdk-pro.min_1.js"></script>
+		<script>
+			LA.init({
+				id: "JrzGtPf4kir4MsSI",
+				ck: "JrzGtPf4kir4MsSI",
+				autoTrack: true,
+				hashMode: true
+			})
+		</script>
+	</head>
+
+	<body
+		class="home page page-id-194 page-template page-template-page-homepage page-template-page-homepage-php custom-background"
+		ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false"
+		onselectstart="event.returnValue=false">
+		<header role="banner">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar">
+							</span>
+							<span class="icon-bar">
+							</span>
+							<span class="icon-bar">
+							</span>
+						</button>
+						<a class="navbar-brand" id="logo" title="实力打造经典" href="index.html#">
+							赫兹云
+						</a>
+					</div>
+					<!-- end .navbar-header -->
+					<div class="navbar-collapse collapse">
+						<ul id="menu-primary" class="nav navbar-nav navbar-right">
+							<!--	<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown">
+								<a href="#" class="dropdown-toggle">
+									合作共赢 </a>
+							</li>-->
+							<li
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown">
+								<a href="https://wpa.qq.com/msgrd?v=3&uin=2264455923&site=qq&menu=yes&jumpflag=1"
+									class="dropdown-toggle">
+									联系QQ </a>
+							</li>
+
+
+
+
+
+
+						</ul>
+					</div>
+					<!-- end .navbar-collapse -->
+				</div>
+				<!-- end .container -->
+			</nav>
+			<!-- end .navbar -->
+		</header>
+		<!-- end header -->
+		<div class="jumbotron">
+			<div class="container">
+				<div class="splash">
+					<div class="content">
+						<img src="//q2.qlogo.cn/headimg_dl?bs=qq&dst_uin=2264455923&src_uin=2264455923&fid=2264455923&spec=100" alt="PatternFly logo" id="qq" class="wow fadeInDown animated"
+							style="visibility: visible; animation-name: fadeInDown;">
+						<h1 class="wow fadeIn animated" data-wow-delay="750ms"
+							style="visibility: visible; animation-delay: 750ms; animation-name: fadeIn; border-bottom:none;">
+							赫兹云
+						</h1>
+						<p class="description wow fadeIn animated" data-wow-delay="1250ms"
+							style="background:#000; visibility: visible; animation-delay: 1250ms; animation-name: fadeIn;">
+
+
+
+
+						<p>
+							<font color="#DE3FB1">不忘初心
+							</font>
+						</p>
+						<font color="#DE3FB1">
+							<p>
+								<font color="#DE3FB1">方得始终
+								</font>
+							</p>
+							<font color="#DE3FB1">
+								<font color="#DE3FB1">
+
+									<p></p>
+									<div class="icondiv">
+
+										<a href="https://pay.hertzwl.cn/"
+											class="button button-glow button-border button-rounded button-primary text1"
+											target="_blank">赫兹云支付</a>
+
+
+
+										<a href="http://shop.hertzwl.cn/"
+											class="button button-glow button-border button-rounded button-primary text1"
+											target="_blank">赫兹云商城</a>
+
+										<br>
+										<a href="https://fk.hertzwl.cn/"
+											class="button button-glow button-border button-rounded button-primary text1"
+											target="_blank">赫兹云发卡</a>
+									
+
+										
+
+									</div>
+									<br><br><br><br><br><br><br><br>
+
+									<a href="/" target="_blank">赫兹云</a>
+
+								</font>
+							</font>
+						</font>
+					</div>
+					<font color="#DE3FB1">
+						<font color="#DE3FB1">
+							<font color="#DE3FB1">
+							</font>
+						</font>
+					</font>
+				</div>
+				<font color="#DE3FB1">
+					<font color="#DE3FB1">
+						<font color="#DE3FB1">
+						</font>
+					</font>
+				</font>
+			</div>
+			<font color="#DE3FB1">
+				<font color="#DE3FB1">
+					<font color="#DE3FB1">
+					</font>
+				</font>
+			</font>
+		</div>
+		<font color="#DE3FB1">
+			<font color="#DE3FB1">
+				<font color="#DE3FB1">
+					<canvas id="canvas" width="100%" height="100%"></canvas>
+					<!-- <div id="particles-js"></div> -->
+
+
+
+					<script charset="utf-8" id="LA_COLLECT" src="js/js-sdk-pro.min.js"></script>
+					<script>
+						LA.init({
+							id: "JacmnmLFRtXtXymB",
+							ck: "JacmnmLFRtXtXymB"
+						})
+					</script>
+
+
+					<script src="js/hovertreewelcome.js"></script>
+					<script src="js/bg_window.js"></script>
+
+					<audio autoplay="autoplay" id="audio1">
+						<source src="index_1.html" type="audio/mpeg">
+					</audio>
+
+
+
+
+				</font>
+			</font>
+		</font>
+	</body>
+</html>
